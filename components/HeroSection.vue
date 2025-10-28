@@ -13,8 +13,8 @@
     </div>
 
     <!-- Animated waves -->
-    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-      <svg class="relative block w-full h-32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0 pointer-events-none">
+      <svg class="relative block w-full h-20 md:h-24 lg:h-32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path
           d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
           opacity=".25"
@@ -33,7 +33,7 @@
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 text-center text-white px-6 max-w-6xl">
+    <div class="relative z-20 text-center text-white px-6 max-w-6xl mb-24 md:mb-20 lg:mb-16">
       <!-- Decorative element -->
       <div class="opacity-0 animate-fade-in mb-4" style="animation-delay: 0.1s">
         <div class="inline-block border-t-2 border-b-2 border-white/30 py-2 px-8">
@@ -84,7 +84,7 @@
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in" style="animation-delay: 1s">
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in z-30" style="animation-delay: 1s">
       <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center p-2 animate-bounce">
         <div class="w-1 h-3 bg-white rounded-full"></div>
       </div>
