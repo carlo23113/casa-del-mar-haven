@@ -1,0 +1,77 @@
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './app.vue',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+        },
+        sand: {
+          50: '#faf8f5',
+          100: '#f5f1eb',
+          200: '#ebe3d7',
+          300: '#ddd0bd',
+          400: '#cab89d',
+          500: '#b39f82',
+          600: '#9d876d',
+          700: '#876f5a',
+          800: '#6d5a4a',
+          900: '#5a4a3d',
+        },
+        ocean: {
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+        },
+        coral: {
+          50: '#fff5f3',
+          100: '#ffe8e1',
+          200: '#ffd4c8',
+          300: '#ffb8a3',
+          400: '#ff8f6d',
+          500: '#ff6b3d',
+          600: '#f04e1f',
+          700: '#c93d15',
+          800: '#a63416',
+          900: '#892f19',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
+      },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'fade-in': 'fadeIn 1s ease-out forwards',
+        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+        'scale-in': 'scaleIn 0.6s ease-out forwards',
+      },
+    },
+  },
+  plugins: [],
+} satisfies Config
