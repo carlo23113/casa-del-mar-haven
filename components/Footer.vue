@@ -1,23 +1,23 @@
 <template>
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-6">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
+  <footer class="bg-gray-900 text-white py-8 md:py-10 lg:py-12">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 lg:gap-8 mb-6 md:mb-7 lg:mb-8">
         <!-- Brand -->
-        <div>
-          <h3 class="font-serif text-2xl font-bold mb-4">Casa Del Mar Haven</h3>
-          <p class="text-gray-400 mb-4">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h3 class="font-serif text-xl md:text-xl lg:text-2xl font-bold mb-3 md:mb-3 lg:mb-4">Casa Del Mar Haven</h3>
+          <p class="text-sm md:text-sm lg:text-base text-gray-400 mb-4">
             Your perfect escape where luxury meets the ocean.
           </p>
         </div>
 
         <!-- Quick Links -->
         <div>
-          <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
-          <ul class="space-y-2">
+          <h4 class="font-semibold text-base md:text-base lg:text-lg mb-3 md:mb-3 lg:mb-4">Quick Links</h4>
+          <ul class="space-y-1.5 md:space-y-1.5 lg:space-y-2">
             <li v-for="link in quickLinks" :key="link.name">
               <a
                 :href="link.href"
-                class="text-gray-400 hover:text-white transition-colors duration-300"
+                class="text-sm md:text-sm lg:text-base text-gray-400 hover:text-white transition-colors duration-300"
               >
                 {{ link.name }}
               </a>
@@ -27,44 +27,25 @@
 
         <!-- Services -->
         <div>
-          <h4 class="font-semibold text-lg mb-4">Services</h4>
-          <ul class="space-y-2">
+          <h4 class="font-semibold text-base md:text-base lg:text-lg mb-3 md:mb-3 lg:mb-4">Services</h4>
+          <ul class="space-y-1.5 md:space-y-1.5 lg:space-y-2">
             <li v-for="service in services" :key="service">
-              <span class="text-gray-400">{{ service }}</span>
+              <span class="text-sm md:text-sm lg:text-base text-gray-400">{{ service }}</span>
             </li>
           </ul>
-        </div>
-
-        <!-- Newsletter -->
-        <div>
-          <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
-          <p class="text-gray-400 mb-4">Subscribe for exclusive offers</p>
-          <form @submit.prevent class="flex">
-            <input
-              type="email"
-              placeholder="Your email"
-              class="flex-1 px-4 py-2 rounded-l-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-ocean-500"
-            />
-            <button
-              type="submit"
-              class="bg-ocean-600 px-4 py-2 rounded-r-lg hover:bg-ocean-700 transition-colors duration-300"
-            >
-              Subscribe
-            </button>
-          </form>
         </div>
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 text-sm mb-4 md:mb-0">
+      <div class="pt-6 md:pt-7 lg:pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-400 text-xs md:text-sm text-center md:text-left">
           © {{ currentYear }} Casa Del Mar Haven. All rights reserved.
         </p>
-        <div class="flex space-x-6">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+        <div class="flex space-x-4 md:space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-xs md:text-sm">
             Privacy Policy
           </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-xs md:text-sm">
             Terms of Service
           </a>
         </div>

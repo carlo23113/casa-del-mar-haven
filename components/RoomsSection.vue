@@ -1,31 +1,31 @@
 <template>
-  <section id="rooms" class="py-32 bg-gradient-to-b from-white to-sand-50 relative overflow-hidden">
+  <section id="rooms" class="py-16 md:py-32 bg-gradient-to-b from-white to-sand-50 relative overflow-hidden">
     <!-- Decorative background -->
     <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, #0891b2 35px, #0891b2 36px);"></div>
 
-    <div class="container mx-auto px-6 relative z-10">
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
       <!-- Section Header -->
-      <div class="text-center mb-20">
-        <div class="inline-block mb-4">
-          <span class="text-sm tracking-[0.3em] uppercase text-ocean-600 font-semibold">Accommodations</span>
+      <div class="text-center mb-12 md:mb-20">
+        <div class="inline-block mb-3 md:mb-4">
+          <span class="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase text-ocean-600 font-semibold">Accommodations</span>
         </div>
         <h2
           ref="titleRef"
-          class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 opacity-0 transition-all duration-1000 leading-tight"
+          class="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 md:mb-6 opacity-0 transition-all duration-1000 leading-tight"
           :class="{ 'opacity-100 translate-y-0': titleVisible }"
           style="transform: translateY(30px)"
         >
           Luxurious <span class="text-ocean-600">Suites</span><br class="hidden sm:block" /> & Rooms
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-coral-400 to-ocean-500 mx-auto mb-8 rounded-full"></div>
-        <p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <div class="w-20 md:w-24 h-1 bg-gradient-to-r from-coral-400 to-ocean-500 mx-auto mb-6 md:mb-8 rounded-full"></div>
+        <p class="text-gray-600 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
           Choose from our carefully curated selection of rooms and suites, each designed to provide
           the ultimate comfort and elegance for an unforgettable stay.
         </p>
       </div>
 
       <!-- Rooms Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <div
           v-for="(room, index) in rooms"
           :key="index"
@@ -35,9 +35,9 @@
           style="transform: translateY(30px)"
         >
           <!-- Room Card -->
-          <div class="relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-white border border-gray-100">
+          <div class="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-white border border-gray-100 hover:border-ocean-200 hover:-translate-y-2">
             <!-- Image -->
-            <div class="relative h-72 overflow-hidden">
+            <div class="relative h-56 md:h-64 lg:h-72 overflow-hidden">
               <img
                 :src="room.image"
                 :alt="room.name"
@@ -50,39 +50,39 @@
 
               <!-- View Details Button (appears on hover) -->
               <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-90 group-hover:scale-100">
-                <button class="bg-white text-ocean-700 px-8 py-3 rounded-full font-semibold shadow-xl hover:bg-sand-100 transition-colors duration-300">
+                <button class="bg-white text-ocean-700 px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold shadow-xl hover:bg-sand-100 transition-colors duration-300">
                   View Details
                 </button>
               </div>
 
               <!-- Price tag -->
-              <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                <span class="text-ocean-700 font-bold text-lg">{{ room.price }}</span>
+              <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <span class="text-ocean-700 font-bold text-base md:text-lg">{{ room.price }}</span>
                 <span class="text-gray-600 text-xs">/night</span>
               </div>
             </div>
 
             <!-- Content -->
-            <div class="p-8 bg-white">
-              <h3 class="font-serif text-2xl font-bold text-gray-900 mb-3">{{ room.name }}</h3>
-              <p class="text-gray-600 mb-6 leading-relaxed">{{ room.description }}</p>
+            <div class="p-5 md:p-8 bg-white">
+              <h3 class="font-serif text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">{{ room.name }}</h3>
+              <p class="text-gray-600 text-sm md:text-base mb-4 md:mb-6 leading-relaxed">{{ room.description }}</p>
 
               <!-- Features -->
-              <div class="flex flex-wrap gap-2 mb-6">
+              <div class="flex flex-wrap gap-2 mb-4 md:mb-6">
                 <span
                   v-for="(feature, fIndex) in room.features"
                   :key="fIndex"
-                  class="text-xs font-medium bg-gradient-to-r from-sand-100 to-sand-200 text-sand-800 px-4 py-2 rounded-full border border-sand-300"
+                  class="text-xs font-medium bg-gradient-to-r from-sand-100 to-sand-200 text-sand-800 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-sand-300"
                 >
                   {{ feature }}
                 </span>
               </div>
 
               <!-- CTA -->
-              <div class="pt-6 border-t border-gray-100">
+              <div class="pt-4 md:pt-6 border-t border-gray-100">
                 <a
                   href="#contact"
-                  class="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-ocean-600 to-ocean-700 text-white px-6 py-3 rounded-full font-semibold hover:from-ocean-700 hover:to-ocean-800 transition-all duration-300 hover:shadow-lg"
+                  class="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-ocean-600 to-ocean-700 text-white px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:from-ocean-700 hover:to-ocean-800 transition-all duration-300 hover:shadow-lg"
                 >
                   <span>Book Now</span>
                   <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

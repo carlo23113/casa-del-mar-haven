@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="py-32 bg-gradient-to-b from-white to-ocean-50 relative overflow-hidden">
+  <section id="contact" class="py-16 md:py-32 bg-gradient-to-b from-white to-ocean-50 relative overflow-hidden">
     <!-- Background image -->
     <div class="absolute inset-0 opacity-5">
       <img
@@ -9,114 +9,114 @@
       />
     </div>
 
-    <div class="container mx-auto px-6 relative z-10">
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
       <!-- Section Header -->
-      <div class="text-center mb-20">
-        <div class="inline-block mb-4">
-          <span class="text-sm tracking-[0.3em] uppercase text-ocean-600 font-semibold">Contact Us</span>
+      <div class="text-center mb-12 md:mb-20">
+        <div class="inline-block mb-3 md:mb-4">
+          <span class="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase text-ocean-600 font-semibold">Contact Us</span>
         </div>
         <h2
           ref="titleRef"
-          class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 opacity-0 transition-all duration-1000 leading-tight"
+          class="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 md:mb-6 opacity-0 transition-all duration-1000 leading-tight"
           :class="{ 'opacity-100 translate-y-0': titleVisible }"
           style="transform: translateY(30px)"
         >
           Get In <span class="text-ocean-600">Touch</span>
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-coral-400 to-ocean-500 mx-auto mb-8 rounded-full"></div>
-        <p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <div class="w-20 md:w-24 h-1 bg-gradient-to-r from-coral-400 to-ocean-500 mx-auto mb-6 md:mb-8 rounded-full"></div>
+        <p class="text-gray-600 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
           Ready to experience paradise? Contact us to book your dream getaway or ask any questions.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
         <!-- Contact Form -->
         <div
           ref="formRef"
-          class="bg-white p-8 rounded-2xl shadow-xl opacity-0 transition-all duration-1000"
+          class="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl shadow-xl opacity-0 transition-all duration-1000"
           :class="{ 'opacity-100 translate-x-0': formVisible }"
-          style="transform: translateX(-50px)"
+          style="transform: translateX(0)"
         >
-          <h3 class="font-serif text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+          <h3 class="font-serif text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Send Us a Message</h3>
 
-          <form @submit.prevent="handleSubmit" class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
+          <form @submit.prevent="handleSubmit" class="space-y-4 md:space-y-6">
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2">First Name</label>
                 <input
                   v-model="form.firstName"
                   type="text"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
+                  class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
                   placeholder="John"
                 />
               </div>
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2">Last Name</label>
                 <input
                   v-model="form.lastName"
                   type="text"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
+                  class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
                   placeholder="Doe"
                 />
               </div>
             </div>
 
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+              <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2">Email</label>
               <input
                 v-model="form.email"
                 type="email"
                 required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
+                class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
                 placeholder="john.doe@example.com"
               />
             </div>
 
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+              <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2">Phone</label>
               <input
                 v-model="form.phone"
                 type="tel"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
+                class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
                 placeholder="+1 (555) 123-4567"
               />
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Check-in Date</label>
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2">Check-in Date</label>
                 <input
                   v-model="form.checkIn"
                   type="date"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
+                  class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
                 />
               </div>
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Check-out Date</label>
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2">Check-out Date</label>
                 <input
                   v-model="form.checkOut"
                   type="date"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
+                  class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
                 />
               </div>
             </div>
 
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+              <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2">Message</label>
               <textarea
                 v-model="form.message"
                 rows="4"
                 required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300 resize-none"
+                class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300 resize-none"
                 placeholder="Tell us about your requirements..."
               ></textarea>
             </div>
 
             <button
               type="submit"
-              class="w-full bg-ocean-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-ocean-700 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              class="w-full bg-ocean-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-sm md:text-base font-semibold hover:bg-ocean-700 transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
               Send Message
             </button>
@@ -134,16 +134,16 @@
         <!-- Contact Information -->
         <div
           ref="infoRef"
-          class="space-y-6 opacity-0 transition-all duration-1000"
+          class="space-y-4 md:space-y-6 opacity-0 transition-all duration-1000"
           :class="{ 'opacity-100 translate-x-0': infoVisible }"
-          style="transform: translateX(50px)"
+          style="transform: translateX(0)"
         >
           <!-- Quick Response Card -->
-          <div class="bg-gradient-to-br from-ocean-600 to-ocean-700 p-8 rounded-3xl shadow-2xl text-white">
+          <div class="bg-gradient-to-br from-ocean-600 to-ocean-700 p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl text-white">
             <div class="text-center">
-              <div class="text-5xl mb-4">💬</div>
-              <h3 class="font-serif text-3xl font-bold mb-3">Quick Response</h3>
-              <p class="text-lg opacity-90 mb-6">
+              <div class="text-4xl md:text-5xl mb-3 md:mb-4">💬</div>
+              <h3 class="font-serif text-2xl md:text-3xl font-bold mb-2 md:mb-3">Quick Response</h3>
+              <p class="text-sm md:text-base lg:text-lg opacity-90 mb-4 md:mb-6">
                 Our team typically responds within 2 hours during business hours
               </p>
               <div class="flex items-center justify-center gap-2 text-sand-200">

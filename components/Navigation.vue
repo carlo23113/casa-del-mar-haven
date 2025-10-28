@@ -5,26 +5,26 @@
       scrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg py-4' : 'bg-gradient-to-b from-black/30 to-transparent py-6'
     ]"
   >
-    <div class="container mx-auto px-6 flex justify-between items-center">
+    <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
       <a
         href="#home"
         :class="[
-          'font-serif text-2xl md:text-3xl font-bold transition-colors duration-300 flex items-center gap-2',
+          'font-serif text-xl md:text-2xl lg:text-3xl font-bold transition-colors duration-300 flex items-center gap-2',
           scrolled ? 'text-ocean-700' : 'text-white'
         ]"
       >
-        <span class="text-3xl">🏖️</span>
+        <span class="text-2xl md:text-3xl">🏖️</span>
         <span class="hidden sm:inline">Casa Del Mar Haven</span>
         <span class="sm:hidden">CDM</span>
       </a>
 
-      <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+      <div class="hidden lg:flex items-center space-x-0.5 xl:space-x-1 2xl:space-x-2">
         <a
           v-for="item in menuItems"
           :key="item.name"
           :href="item.href"
           :class="[
-            'font-medium px-4 py-2 rounded-full transition-all duration-300',
+            'font-medium px-2 xl:px-3 2xl:px-4 py-2 rounded-full transition-all duration-300 text-xs xl:text-sm 2xl:text-base whitespace-nowrap',
             scrolled
               ? 'text-gray-700 hover:bg-ocean-50 hover:text-ocean-700'
               : 'text-white hover:bg-white/10 backdrop-blur-sm'
@@ -35,7 +35,7 @@
         <a
           href="#contact"
           :class="[
-            'ml-4 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105',
+            'ml-1 xl:ml-2 2xl:ml-4 px-4 xl:px-5 2xl:px-6 py-2 rounded-full text-xs xl:text-sm 2xl:text-base font-semibold transition-all duration-300 hover:scale-105 whitespace-nowrap',
             scrolled
               ? 'bg-gradient-to-r from-ocean-600 to-ocean-700 text-white hover:from-ocean-700 hover:to-ocean-800 shadow-md'
               : 'bg-white text-ocean-700 hover:bg-sand-100'
@@ -48,21 +48,21 @@
       <button
         @click="toggleMenu"
         :class="[
-          'md:hidden p-2 rounded-lg transition-all duration-300',
+          'lg:hidden p-2 rounded-lg transition-all duration-300',
           scrolled ? 'text-gray-700 hover:bg-ocean-50' : 'text-white hover:bg-white/10 backdrop-blur-sm'
         ]"
       >
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path v-if="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
+    <!-- Mobile/Tablet Menu -->
     <div
       v-if="mobileMenuOpen"
-      class="md:hidden bg-white/95 backdrop-blur-lg shadow-lg animate-fade-in-up"
+      class="lg:hidden bg-white/95 backdrop-blur-lg shadow-lg animate-fade-in-up"
     >
       <div class="container mx-auto px-6 py-6 flex flex-col space-y-2">
         <a

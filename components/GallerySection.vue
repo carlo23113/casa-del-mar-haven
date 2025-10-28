@@ -1,27 +1,27 @@
 <template>
-  <section id="gallery" class="py-32 bg-gradient-to-b from-sand-50 to-white">
-    <div class="container mx-auto px-6">
+  <section id="gallery" class="py-16 md:py-32 bg-gradient-to-b from-sand-50 to-white">
+    <div class="container mx-auto px-4 md:px-6">
       <!-- Section Header -->
-      <div class="text-center mb-20">
-        <div class="inline-block mb-4">
-          <span class="text-sm tracking-[0.3em] uppercase text-ocean-600 font-semibold">Gallery</span>
+      <div class="text-center mb-12 md:mb-20">
+        <div class="inline-block mb-3 md:mb-4">
+          <span class="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase text-ocean-600 font-semibold">Gallery</span>
         </div>
         <h2
           ref="titleRef"
-          class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 opacity-0 transition-all duration-1000 leading-tight"
+          class="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 md:mb-6 opacity-0 transition-all duration-1000 leading-tight"
           :class="{ 'opacity-100 translate-y-0': titleVisible }"
           style="transform: translateY(30px)"
         >
           Visual <span class="text-ocean-600">Journey</span>
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-coral-400 to-ocean-500 mx-auto mb-8 rounded-full"></div>
-        <p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <div class="w-20 md:w-24 h-1 bg-gradient-to-r from-coral-400 to-ocean-500 mx-auto mb-6 md:mb-8 rounded-full"></div>
+        <p class="text-gray-600 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
           Discover the beauty and elegance that awaits you at Casa Del Mar Haven.
         </p>
       </div>
 
       <!-- Masonry Gallery Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
         <div
           v-for="(image, index) in images"
           :key="index"
@@ -44,8 +44,8 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
             <!-- Title overlay -->
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-              <h3 class="font-serif font-bold text-lg">{{ image.title }}</h3>
+            <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
+              <h3 class="font-serif font-bold text-sm md:text-base lg:text-lg">{{ image.title }}</h3>
             </div>
 
             <!-- Hover overlay -->
@@ -53,8 +53,8 @@
 
             <!-- Zoom icon on hover -->
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="bg-white p-3 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300">
-                <svg class="w-6 h-6 text-ocean-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="bg-white p-2 md:p-3 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                <svg class="w-5 h-5 md:w-6 md:h-6 text-ocean-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
                 </svg>
               </div>
@@ -71,10 +71,10 @@
           @click="closeLightbox"
         >
           <button
-            class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
+            class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-gray-300 transition-colors z-10"
             @click="closeLightbox"
           >
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -82,36 +82,36 @@
           <!-- Navigation arrows -->
           <button
             v-if="currentImageIndex > 0"
-            class="absolute left-6 text-white hover:text-gray-300 transition-colors"
+            class="absolute left-2 md:left-6 text-white hover:text-gray-300 transition-colors"
             @click.stop="previousImage"
           >
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
           <button
             v-if="currentImageIndex < images.length - 1"
-            class="absolute right-6 text-white hover:text-gray-300 transition-colors"
+            class="absolute right-2 md:right-6 text-white hover:text-gray-300 transition-colors"
             @click.stop="nextImage"
           >
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           <!-- Image -->
-          <div class="max-w-6xl max-h-full animate-scale-in" @click.stop>
-            <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl">
+          <div class="max-w-6xl max-h-full animate-scale-in px-2 md:px-0" @click.stop>
+            <div class="relative w-full rounded-lg md:rounded-2xl overflow-hidden shadow-2xl">
               <img
                 :src="images[currentImageIndex].image"
                 :alt="images[currentImageIndex].title"
-                class="w-full h-auto max-h-[80vh] object-contain"
+                class="w-full h-auto max-h-[70vh] md:max-h-[80vh] object-contain"
               />
             </div>
-            <div class="text-white text-center mt-6">
-              <h3 class="text-2xl font-serif font-bold mb-2">{{ images[currentImageIndex].title }}</h3>
-              <p class="text-lg opacity-90">{{ images[currentImageIndex].description }}</p>
+            <div class="text-white text-center mt-4 md:mt-6 px-4">
+              <h3 class="text-lg md:text-xl lg:text-2xl font-serif font-bold mb-1 md:mb-2">{{ images[currentImageIndex].title }}</h3>
+              <p class="text-sm md:text-base lg:text-lg opacity-90">{{ images[currentImageIndex].description }}</p>
             </div>
           </div>
         </div>
