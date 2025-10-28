@@ -26,7 +26,7 @@
           v-for="(image, index) in images"
           :key="index"
           ref="imageRefs"
-          class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group opacity-0 transition-all duration-1000"
+          class="relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)] cursor-pointer group opacity-0 transition-all duration-1000 hover:-translate-y-2"
           :class="[
             image.size,
             { 'opacity-100 scale-100': imagesVisible[index] }
@@ -39,21 +39,21 @@
             <img
               :src="image.image"
               :alt="image.title"
-              class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+              class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 group-hover:rotate-2 transition-all duration-700"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
             <!-- Title overlay -->
-            <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
-              <h3 class="font-serif font-bold text-sm md:text-base lg:text-lg">{{ image.title }}</h3>
+            <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <h3 class="font-serif font-bold text-sm md:text-base lg:text-lg group-hover:text-sand-200 transition-colors duration-300">{{ image.title }}</h3>
             </div>
 
             <!-- Hover overlay -->
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-ocean-900/40 to-coral-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             <!-- Zoom icon on hover -->
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="bg-white p-2 md:p-3 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <div class="bg-white p-2 md:p-3 rounded-full transform scale-0 group-hover:scale-100 transition-all duration-500 shadow-2xl hover:bg-sand-100 hover:scale-110">
                 <svg class="w-5 h-5 md:w-6 md:h-6 text-ocean-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
                 </svg>

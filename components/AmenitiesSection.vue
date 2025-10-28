@@ -54,16 +54,21 @@
           :style="{ transitionDelay: `${index * 100}ms` }"
         >
           <div
-            class="group cursor-pointer bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-ocean-200"
+            class="group cursor-pointer bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-gray-100 hover:border-ocean-300 relative overflow-hidden"
           >
+            <!-- Animated background gradient -->
+            <div class="absolute inset-0 bg-gradient-to-br from-ocean-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
             <!-- Icon Container -->
-            <div class="mb-4 md:mb-6 flex justify-center">
+            <div class="mb-4 md:mb-6 flex justify-center relative z-10">
               <div
-                class="w-20 h-20 md:w-28 md:h-28 rounded-xl md:rounded-2xl flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-md group-hover:shadow-xl"
+                class="w-20 h-20 md:w-28 md:h-28 rounded-xl md:rounded-2xl flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-md group-hover:shadow-xl relative"
                 :class="amenity.bgColor"
               >
+                <!-- Shine effect -->
+                <div class="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-tr from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div
-                  class="text-4xl md:text-5xl transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-6"
+                  class="text-4xl md:text-5xl transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-6 relative z-10"
                   v-html="amenity.icon"
                 ></div>
               </div>
@@ -71,10 +76,10 @@
 
             <!-- Content -->
             <h3
-              class="font-serif text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3"
+              class="font-serif text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-ocean-700 transition-colors duration-300 relative z-10"
               >{{ amenity.title }}</h3
             >
-            <p class="text-sm md:text-base text-gray-600 leading-relaxed">{{
+            <p class="text-sm md:text-base text-gray-600 leading-relaxed relative z-10">{{
               amenity.description
             }}</p>
           </div>
@@ -133,11 +138,11 @@
               </p>
               <a
                 href="#contact"
-                class="group inline-flex items-center justify-center gap-2 bg-white text-ocean-700 px-8 md:px-10 py-4 md:py-5 rounded-full text-sm md:text-base font-semibold hover:bg-sand-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-fade-in-up animation-delay-400 w-full sm:w-auto max-w-xs sm:max-w-none"
+                class="group inline-flex items-center justify-center gap-2 bg-white text-ocean-700 px-8 md:px-10 py-4 md:py-5 rounded-full text-sm md:text-base font-semibold hover:bg-sand-100 transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_60px_rgba(255,255,255,0.3)] hover:-translate-y-1 animate-fade-in-up animation-delay-400 w-full sm:w-auto max-w-xs sm:max-w-none relative overflow-hidden"
               >
-                <span>Book a Spa Session</span>
+                <span class="relative z-10">Book a Spa Session</span>
                 <svg
-                  class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300"
+                  class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -149,6 +154,7 @@
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
+                <div class="absolute inset-0 bg-gradient-to-r from-coral-300 to-sand-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </a>
             </div>
           </div>

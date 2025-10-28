@@ -65,16 +65,16 @@
             <div
               v-for="(feature, index) in features"
               :key="index"
-              class="flex items-start space-x-2 opacity-0 animate-fade-in-up"
+              class="group flex items-start space-x-2 opacity-0 animate-fade-in-up p-4 rounded-xl hover:bg-ocean-50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
               :style="{ animationDelay: `${0.2 + index * 0.1}s` }"
             >
-              <div class="bg-ocean-100 p-2 rounded-lg flex-shrink-0">
+              <div class="bg-gradient-to-br from-ocean-100 to-ocean-200 p-2.5 rounded-lg flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                 <svg class="w-4 h-4 text-ocean-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <div>
-                <h3 class="font-semibold text-sm text-gray-800">{{ feature.title }}</h3>
+                <h3 class="font-semibold text-sm text-gray-800 group-hover:text-ocean-700 transition-colors duration-300">{{ feature.title }}</h3>
                 <p class="text-xs text-gray-600">{{ feature.description }}</p>
               </div>
             </div>
@@ -82,12 +82,13 @@
 
           <a
             href="#rooms"
-            class="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-ocean-600 to-ocean-700 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold hover:from-ocean-700 hover:to-ocean-800 transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full sm:w-auto"
+            class="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-ocean-600 to-ocean-700 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold hover:from-ocean-700 hover:to-ocean-800 transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_60px_rgba(8,145,178,0.4)] hover:-translate-y-1 w-full sm:w-auto relative overflow-hidden"
           >
-            <span>Discover Our Rooms</span>
-            <svg class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span class="relative z-10">Discover Our Rooms</span>
+            <svg class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-coral-400 to-coral-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
           </a>
         </div>
       </div>

@@ -35,7 +35,7 @@
           style="transform: translateY(30px)"
         >
           <!-- Room Card -->
-          <div class="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-white border border-gray-100 hover:border-ocean-200 hover:-translate-y-2">
+          <div class="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-xl hover:shadow-[0_25px_70px_rgba(0,0,0,0.2)] transition-all duration-500 bg-white border border-gray-100 hover:border-ocean-300 hover:-translate-y-3">
             <!-- Image -->
             <div class="relative h-56 md:h-64 lg:h-72 overflow-hidden">
               <img
@@ -46,17 +46,18 @@
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
               <!-- Overlay on hover -->
-              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <!-- View Details Button (appears on hover) -->
               <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-90 group-hover:scale-100">
-                <button class="bg-white text-ocean-700 px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold shadow-xl hover:bg-sand-100 transition-colors duration-300">
-                  View Details
+                <button class="bg-white text-ocean-700 px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold shadow-2xl hover:bg-sand-100 hover:scale-110 transition-all duration-300 relative overflow-hidden">
+                  <span class="relative z-10">View Details</span>
+                  <div class="absolute inset-0 bg-gradient-to-r from-sand-100 to-coral-200 transform scale-x-0 hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </button>
               </div>
 
               <!-- Price tag -->
-              <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+              <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-gradient-to-br from-white to-sand-50 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 border border-ocean-100">
                 <span class="text-ocean-700 font-bold text-base md:text-lg">{{ room.price }}</span>
                 <span class="text-gray-600 text-xs">/night</span>
               </div>
@@ -72,7 +73,7 @@
                 <span
                   v-for="(feature, fIndex) in room.features"
                   :key="fIndex"
-                  class="text-xs font-medium bg-gradient-to-r from-sand-100 to-sand-200 text-sand-800 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-sand-300"
+                  class="text-xs font-medium bg-gradient-to-r from-sand-100 to-sand-200 text-sand-800 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-sand-300 hover:from-ocean-100 hover:to-ocean-200 hover:text-ocean-800 hover:border-ocean-300 hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   {{ feature }}
                 </span>
@@ -82,12 +83,13 @@
               <div class="pt-4 md:pt-6 border-t border-gray-100">
                 <a
                   href="#contact"
-                  class="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-ocean-600 to-ocean-700 text-white px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:from-ocean-700 hover:to-ocean-800 transition-all duration-300 hover:shadow-lg"
+                  class="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-ocean-600 to-ocean-700 text-white px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:from-ocean-700 hover:to-ocean-800 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(8,145,178,0.4)] hover:scale-105 hover:-translate-y-0.5 relative overflow-hidden"
                 >
-                  <span>Book Now</span>
-                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span class="relative z-10">Book Now</span>
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
+                  <div class="absolute inset-0 bg-gradient-to-r from-coral-500 to-coral-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </a>
               </div>
             </div>

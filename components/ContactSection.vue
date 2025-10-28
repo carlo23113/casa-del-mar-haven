@@ -33,7 +33,7 @@
         <!-- Contact Form -->
         <div
           ref="formRef"
-          class="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl shadow-xl opacity-0 transition-all duration-1000"
+          class="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl shadow-xl hover:shadow-[0_25px_70px_rgba(0,0,0,0.15)] opacity-0 transition-all duration-1000 border border-gray-100"
           :class="{ 'opacity-100 translate-x-0': formVisible }"
           style="transform: translateX(0)"
         >
@@ -47,7 +47,7 @@
                   v-model="form.firstName"
                   type="text"
                   required
-                  class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-300"
+                  class="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-400 focus:border-ocean-400 transition-all duration-300 hover:border-gray-300"
                   placeholder="John"
                 />
               </div>
@@ -116,9 +116,15 @@
 
             <button
               type="submit"
-              class="w-full bg-ocean-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-sm md:text-base font-semibold hover:bg-ocean-700 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              class="group w-full bg-gradient-to-r from-ocean-600 to-ocean-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-sm md:text-base font-semibold hover:from-ocean-700 hover:to-ocean-800 transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_60px_rgba(8,145,178,0.4)] hover:-translate-y-1 relative overflow-hidden"
             >
-              Send Message
+              <span class="relative z-10 inline-flex items-center justify-center gap-2">
+                Send Message
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+              <div class="absolute inset-0 bg-gradient-to-r from-coral-500 to-coral-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </button>
           </form>
 

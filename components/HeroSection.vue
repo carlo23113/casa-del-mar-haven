@@ -6,12 +6,15 @@
       style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1920&q=80')"
       :style="{ transform: `translateY(${scrollY * 0.5}px) scale(1.1)` }"
     >
-      <div class="absolute inset-0 bg-gradient-to-br from-ocean-900/70 via-ocean-800/60 to-ocean-700/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-ocean-900/75 via-ocean-800/65 to-ocean-700/55"></div>
       <!-- Decorative circles with animation -->
-      <div class="absolute top-20 right-20 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-20 left-20 w-72 h-72 bg-coral-300 opacity-10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-      <!-- Additional floating elements -->
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-sand-200 opacity-5 rounded-full blur-3xl"></div>
+      <div class="absolute top-20 right-20 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div class="absolute bottom-20 left-20 w-72 h-72 bg-coral-300 opacity-10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-sand-200 opacity-5 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 4s;"></div>
+      <!-- Floating particles -->
+      <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-white/30 rounded-full animate-float"></div>
+      <div class="absolute top-2/3 left-1/4 w-1 h-1 bg-white/20 rounded-full animate-float" style="animation-delay: 1s; animation-duration: 8s;"></div>
+      <div class="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-coral-200/20 rounded-full animate-float" style="animation-delay: 3s; animation-duration: 10s;"></div>
     </div>
 
     <!-- Animated waves -->
@@ -70,17 +73,17 @@
       >
         <a
           href="#rooms"
-          class="group relative bg-white text-ocean-700 px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          class="group relative bg-white text-ocean-700 px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] hover:-translate-y-1"
         >
-          <span class="relative z-10">Explore Rooms</span>
-          <div class="absolute inset-0 bg-sand-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+          <span class="relative z-10 transition-colors duration-300">Explore Rooms</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-sand-200 to-coral-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
         </a>
         <a
           href="#contact"
-          class="group relative border-2 border-white px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold overflow-hidden transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/10"
+          class="group relative border-2 border-white px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold overflow-hidden transition-all duration-500 hover:scale-105 backdrop-blur-sm bg-white/10 hover:bg-white/20 hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:-translate-y-1"
         >
           <span class="relative z-10 group-hover:text-ocean-700 transition-colors duration-300">Book Now</span>
-          <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+          <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
         </a>
       </div>
     </div>
@@ -151,5 +154,39 @@ onUnmounted(() => {
 .animate-wave-slow {
   animation: wave-slow 18s ease-in-out infinite;
   animation-delay: -6s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-20px) translateX(5px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.05;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
 }
 </style>
